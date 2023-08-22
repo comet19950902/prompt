@@ -1,14 +1,8 @@
 import React from 'react'
 import Slider from '../slide/Slider'
 
-interface Props {
-    category?: string;
-    imageUrl: string;
-    description: string;
-    price: number;
-}
 
-export default function () {
+export default function MainPage () {
     const freeRes = [
         { category: '', imageUrl: '/aiImage/1 (1).jfif', description: 'Blue Simple Drawings', price: 3.99 },
         { category: '', imageUrl: '/aiImage/1 (1).jpg', description: 'Blue Simple Drawings', price: 5.99 },
