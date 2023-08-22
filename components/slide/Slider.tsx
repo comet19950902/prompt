@@ -27,7 +27,7 @@ const responsive = {
     },
     mobile: {
         breakpoint: { max: 767, min: 464 },
-        items: 2,
+        items: 3,
         slidesToSlide: 1 // optional, default to 1.
     }
 };
@@ -36,7 +36,7 @@ const responsive = {
 const Slider: React.FC<{ compArray: Props[] }> = ({ compArray }) => {
     
     return (
-        <div className='relative'>
+        <div className='relative ml-4 md:ml-32'>
 
             <Carousel
                 responsive={responsive}
@@ -46,7 +46,6 @@ const Slider: React.FC<{ compArray: Props[] }> = ({ compArray }) => {
                 infinite={true}
                 partialVisible={false}
                 dotListClass="custom-dot-list-style"
-
             >
                 {/* Add your carousel slides here */}
                 {compArray.map((comp, index) => (

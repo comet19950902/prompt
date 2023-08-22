@@ -12,7 +12,7 @@ interface Props {
 
 const SliderComp: React.FC<Props> = ({ category, imageUrl, description, sales, thumb, key }) => {
     return (
-        <div className='slider relative ml-4 mt-4 rounded-lg shadow-card-upload-black' key={key}>
+        <div className='slider relative mx-2 mt-4 rounded-lg shadow-card-upload-black' key={key}>
             <div className='w-full'>
                 <div className='w-full flex'>
                     <img src={imageUrl[0]} className=' rounded-tl-lg w-[50%] aspect-square object-cover object-center' alt='wrongUrl' />
