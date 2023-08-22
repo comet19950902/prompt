@@ -8,9 +8,10 @@ import SliderComp from './SliderComp';
 
 interface Props {
     category?: string;
-    imageUrl: string;
+    imageUrl: string[];
     description: string;
-    price: number;
+    sales: number;
+    thumb: number;
 }
 
 const responsive = {
@@ -49,7 +50,7 @@ const Slider: React.FC<{ compArray: Props[] }> = ({ compArray }) => {
             >
                 {/* Add your carousel slides here */}
                 {compArray.map((comp, index) => (
-                    <SliderComp key={index} category={comp.category} imageUrl={comp.imageUrl} description={comp.description} price={comp.price} />
+                    <SliderComp key={index} category={comp.category} imageUrl={comp.imageUrl} description={comp.description} sales={comp.sales} thumb={comp.thumb} />
                 ))}
             </Carousel>
         </div>
