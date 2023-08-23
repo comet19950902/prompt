@@ -23,44 +23,44 @@ export default function MainPage () {
         <div className='w-full items-center bg-[white] font-Urbansit flex flex-col gap-16 py-8'>
             <Title />
             <div className='w-full flex flex-col'>
-                <div className='md:mx-32 mb-4 mx-4 w-full pb-4 font-semibold  text-3xl title-shadow text-[#555] border-b-2 border-b-[#aaa]'>
+                <div className='md:mx-40 mb-4 mx-12 w-full pb-4 font-semibold  text-3xl title-shadow text-[#555]'>
                     Free Resources Daily
                 </div>
                 <Slider compArray={freeRes} />
             </div>
             <div className='w-full flex flex-col'>
-                <div className='md:mx-32 mb-4 mx-4 w-full pb-4 font-semibold text-3xl  title-shadow text-[#555] border-b-2 border-b-[#aaa]'>
+                <div className='md:mx-40 mb-4 mx-12 w-full pb-4 font-semibold text-3xl  title-shadow text-[#555]'>
                     Hottest MidJourney prompts
                 </div>
                 <Slider compArray={hotRes} />
             </div>
             <div className='w-full flex flex-col'>
-                <div className='md:mx-32 mb-4 mx-4 w-full pb-4 font-semibold text-3xl  title-shadow text-[#555] border-b-2 border-b-[#aaa]'>
+                <div className='md:mx-40 mb-4 mx-12 w-full pb-4 font-semibold text-3xl  title-shadow text-[#555]'>
                     Hottest Chat GPT prompts
                 </div>
                 <Slider compArray={freeRes} />
             </div>
             <div className='w-full flex flex-col'>
-                <div className='md:mx-32 mb-4 mx-4 w-full pb-4 font-semibold text-3xl  title-shadow text-[#555] border-b-2 border-b-[#aaa]'>
+                <div className='md:mx-40 mb-4 mx-12 w-full pb-4 font-semibold text-3xl  title-shadow text-[#555]'>
                     Latest MidJourney prompts
                 </div>
                 <Slider compArray={hotRes} />
             </div>
             <div className='w-full flex flex-col'>
-                <div className='md:mx-32 mb-4 mx-4 w-full pb-4 font-semibold text-3xl  title-shadow text-[#555] border-b-2 border-b-[#aaa]'>
+                <div className='md:mx-40 mb-4 mx-12 w-full pb-4 font-semibold text-3xl  title-shadow text-[#555]'>
                     Latest Chat GPT prompts
                 </div>
                 <Slider compArray={freeRes} />
             </div>
             <TitleSecond />
             <div className='w-full flex flex-col'>
-                <div className='md:mx-32 mb-4 mx-4 w-full pb-4 font-semibold text-3xl  title-shadow text-[#555] border-b-2 border-b-[#aaa]'>
+                <div className='md:mx-40 mb-4 mx-12 w-full pb-4 font-semibold text-3xl  title-shadow text-[#555]'>
                     Realistic
                 </div>
                 <Slider compArray={hotRes} />
             </div>
             <div className='w-full flex flex-col'>
-                <div className='md:mx-32 mb-4 mx-4 w-full pb-4 font-semibold text-3xl  title-shadow text-[#555] border-b-2 border-b-[#aaa]'>
+                <div className='md:mx-40 mb-4 mx-12 w-full pb-4 font-semibold text-3xl  title-shadow text-[#555]'>
                     Business
                 </div>
                 <Slider compArray={freeRes} />
