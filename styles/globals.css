@@ -138,3 +138,11 @@ a {
 .title-shadow {
   text-shadow: 0 0 20px rgb(12, 0, 14);
 }
+.opponent {
+  opacity: 0;
+  transition: opacity 0.5s ease; /* Smooth transition */
+}
+
+.visible {
+  opacity: 1;
+}
