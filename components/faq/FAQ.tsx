@@ -23,7 +23,7 @@ const first = [
 export default function FAQ() {
     return (
         <div className='flex w-full py-16 md:py-24 flex-col items-center shadow-card-upload-black relative'>
-            <img className='absolute top-0 left-0 h-full w-full' src='/bg4.jpg' />
+            <img className='absolute top-0 left-0 h-full w-full' src='/bg1.jpg' />
             <div className='font-header text-glow lg:text-5xl md:text-4xl text-center text-2xl px-2 lg:mb-8 md:mb-4 font-bold z-10 text-[white] tracking-wider'>
                 Frequently Asked Questions (FAQ)
             </div>
@@ -38,7 +38,7 @@ export default function FAQ() {
                 </div>
                 {
                     first.map((element, index) => (
-                        <FaqComp title={first[index].title} description={first[index].description} />   
+                        <FaqComp key={index} title={element.title} description={element.description} />   
                     ) )
                 }
             </div>
@@ -54,7 +54,7 @@ export default function FAQ() {
                 <div className='flex flex-col items-center md:w-[600px] w-full'>
                 {
                     first.map((element, index) => (
-                        <FaqComp title={first[index].title} description={first[index].description} />   
+                        <FaqComp key={index} title={element.title} description={element.description} />   
                     ) )
                 }
                 </div>
