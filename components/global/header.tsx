@@ -253,7 +253,7 @@ export default function Header() {
     const Component = useOnce("Header") ? motion.div : "div";
 
     return (
-        <div className='pt-5 pb-3 sm:pt-12 px-0 sm:px-6 flex flex-col w-full shadow-card-upload-black z-50'>
+        <div className='py-3 sm:pt-12 px-0 sm:px-6 flex flex-col w-full shadow-card-upload-black z-50'>
             <div className='flex w-full justify-between items-center'>
                 <Link
                     href=""

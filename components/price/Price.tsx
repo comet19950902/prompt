@@ -77,7 +77,7 @@ export default function Price() {
             <div className={`flex flex-col lg:flex-row items-center justify-center opponent ${!monthly && 'visible'}`}>
                 {
                     (!monthly) && annualStarter.map((plan, index) => (
-                        <PriceComp key={index} numReview={plan.numReview} monthPrice={plan.monthPrice} promptPrice={plan.promptPrice} accessArticle={plan.accessArticle} />
+                        <PriceComp key={index} numReview={plan.numReview} monthPrice={plan.monthPrice} promptPrice={plan.promptPrice} accessArticle={plan.accessArticle} totalSave={plan.totalSave} />
                     ))
                 }
             </div>
