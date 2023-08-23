@@ -265,7 +265,7 @@ export default function Header() {
                     </div>
                 </Link>
                 <div className="py-2 border border-[#555] rounded-md w-full relative text-[black] font-Urbansit ml-4 mr-4 md:ml-6 md:mr-10 lg:ml-10 lg:mr-16">
-                    <input className="flex input-box bg-[transparent] text-white h-10 pl-5 rounded-lg focus:outline-none focus:bg-[transparent] text-lg md:text-2xl"
+                    <input className="outline-none border-none focus:border-none active:outline-none flex input-box bg-[transparent] text-black h-10 pl-5 rounded-lg focus:outline-none focus:bg-[transparent] text-lg md:text-2xl"
                         type="search" name="search" placeholder="Search" />
                     <button type="submit" className="absolute right-0 top-0 mt-4 mr-4 text-dark-grey">
                         <FaSearchengin className='text-2xl text-[#bbb]' />

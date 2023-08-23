@@ -1,12 +1,20 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+/** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/flowbite/**/*.js"
   ],
   theme: {
     // screens: {
     //   'cus-lg': '1150px'
     // },
+    fontFamily: {
+      body: ['iowan-old-style', ...defaultTheme.fontFamily.sans],
+      header: ['whiskey-font-one', ...defaultTheme.fontFamily.serif],
+    },
     extend: {
       fontFamily: {
         odibee: ["Odibee Sans", "cursive"],
@@ -37,5 +45,7 @@ module.exports = {
       "card-bg": '#010518'
     },
   },
-  plugins: [],
+  plugins: [
+    require('flowbite/plugin')
+]
 }
