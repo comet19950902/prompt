@@ -38,11 +38,12 @@ module.exports = {
       }
     },
     colors: {
+      "cus-pink": "#ff1d46",
       "main-bg": "#000C49",
       "bg-secondary": "#130B22",
       "bg-purple": '#0A0219',
       "main-blue": "#1845F3",
-      "card-bg": '#010518'
+      "card-bg": '#010518',
     },
   },
   plugins: [
