@@ -12,7 +12,7 @@ const MostPop:React.FC<Props> = ({title, newsId}) => {
         </div>
         <div className='w-full flex-col'>
             {title.map((elem, index) => (
-                <div className='w-full flex  text-xl text-body text pt-3 text-left font-semibold'>
+                <div key={index} className='w-full flex  text-xl text-body text pt-3 text-left font-semibold'>
                     <div className='text-[#ff1d46] mr-2'>{index+1}.</div>
                     <div>{elem}</div>
                 </div>
