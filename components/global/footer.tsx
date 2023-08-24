@@ -7,7 +7,7 @@ export default function Footer() {
     new Date().getFullYear()
   );
   return (
-    <div className="flex flex-col px-40 w-full font-mono pb-20 pt-24 bg-[black] shadow-card-upload-black first-letter: text-[white]">
+    <div className="flex flex-col px-40 w-full font-header pb-20 pt-24 bg-[black] shadow-card-upload-black first-letter: text-[white]">
       <div className="flex flex-col items-center gap-12 lg:items-start lg:gap-0 lg:flex-row lg:justify-center text-xl font-semibold w-full">
         <Link href='/' className="lg:mr-32 mr-0">
           <p className="text-center">&copy; {copyright}  AI Resources<br /> Marketplace</p>
