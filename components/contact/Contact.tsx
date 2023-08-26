@@ -14,22 +14,22 @@ export default function ContactUs() {
     const [open, setOpen] = React.useState(false);
     return (
         <div className='flex flex-col md:flex-row shadow-card-upload-black w-full relative'>
-            <img className='absolute top-0 left-0 h-full w-full' src='/bg15.jpg' />
+            <img className='absolute top-0 left-0 h-full w-full' src='/bg3.jpg' />
             <div className='flex flex-col items-center md:w-[50%] md:pt-40 py-16 z-10'>
                 <div className='font-header text-glow lg:text-6xl md:text-4xl text-center text-3xl px-2 lg:mb-8 md:mb-4 font-bold z-10 text-[white] tracking-wider'>
                     Contact Us
                 </div>
-                <div className='w-[60%] text-[#ddd] font-body text-justify'>
+                <div className='w-[60%] text-[#ddd] text-2xl font-body text-justify'>
                     Fill the form and send in your queries. We will respond as soon as we can. Alternatively, You can reach out to us at our email address.
                 </div>
-                <div className='text-[#ddd] mt-3 font-body'>
-                    or Check our Our <Link href='/faq' className='text-white font-body text-xl'>FAQ</Link>
+                <div className='text-[#ddd] mt-3 text-2xl font-body'>
+                    or Check our Our <Link href='/faq' className='text-white font-body text-3xl'>FAQ</Link>
                 </div>
             </div>
-            <div className='md:w-[50%] px-4 py-16 md:pr-14 z-10'>
+            <div className='md:w-[50%] px-4 py-16 md:pr-20 z-10'>
                 <form
                     onSubmit={handleSubmit}
-                    className=" rounded-lg w-full flex flex-col px-8 py-8 bg-gradient-to-t from-[#101a30aa] to-[#042831f6] dark:bg-blue-500  shadow-card-upload-black"
+                    className=" rounded-lg w-full flex flex-col px-8 py-8 bg-gradient-to-t from-[#241030aa] to-[#042831f6] dark:bg-blue-500  shadow-card-upload-black"
                 >
                     <h1 className="text-2xl font-bold text-gray-200 font-header">
                         Send a message
