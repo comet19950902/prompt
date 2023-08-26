@@ -14,12 +14,12 @@ export default function Footer() {
         </Link>
         <div className="flex gap-6 md:gap-24 jusitfy-between">
           <div className="flex flex-col items-center gap-10 md:gap-12">
-            <Link href=''>Privacy</Link>
-            <Link href=''>Terms</Link>
+            <Link href='/privacy'>Privacy</Link>
+            <Link href='/terms'>Terms</Link>
           </div>
           <div className="flex flex-col items-center gap-10 md:gap-12">
             <Link href=''>Categories</Link>
-            <Link href=''>FAQ</Link>
+            <Link href='/faq'>FAQ</Link>
           </div>
           <Link href='' className="text-center">Social Media</Link>
         </div>

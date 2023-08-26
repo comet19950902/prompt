@@ -288,7 +288,7 @@ export default function Header() {
                     <div className='text-center leading-tight'>Prompt<br /> Marketplace</div>
                 </Link>
                 <Link
-                    href=""
+                    href="/blog"
                     className={`${classNames(
                         mobileNavItemClass,
                         themeColors["blue"].mobileMenu.item["normal"]
@@ -318,7 +318,7 @@ export default function Header() {
                     <div className=' text-center leading-tight'>Free Chat GPT<br /> Prompts</div>
                 </Link>
                 <Link
-                    href=""
+                    href="/faq"
                     className={`${classNames(
                         mobileNavItemClass,
                         themeColors["blue"].mobileMenu.item["normal"]

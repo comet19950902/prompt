@@ -38,8 +38,8 @@ export default function FAQ() {
                 </div>
                 {
                     first.map((element, index) => (
-                        <FaqComp key={index} title={element.title} description={element.description} />   
-                    ) )
+                        <FaqComp key={index} title={element.title} description={element.description} />
+                    ))
                 }
             </div>
             <div className='z-10 mt-10'>
@@ -51,13 +51,11 @@ export default function FAQ() {
                         Sell Prompt
                     </Link>
                 </div>
-                <div className='flex flex-col items-center md:w-[600px] w-full'>
                 {
                     first.map((element, index) => (
-                        <FaqComp key={index} title={element.title} description={element.description} />   
-                    ) )
+                        <FaqComp key={index} title={element.title} description={element.description} />
+                    ))
                 }
-                </div>
             </div>
         </div>
     )
