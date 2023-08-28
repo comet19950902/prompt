@@ -133,7 +133,7 @@ export default function signup() {
     }
 
     return (
-        <div className='relative min-w-screen min-h-screen text-[#ccc] flex flex-col py-6 items-center justify-center'>
+        <div className=' font-header relative min-w-screen min-h-screen text-[#ccc] flex flex-col py-6 items-center justify-center'>
             <img className='absolute top-0 left-0 h-full w-full' src='/bg6.jpg' />
             {/* <Image src="/logo.png" width={200} height={100} alt='logo' className='mb-10 z-10' /> */}
             <div className=' bg-gradient-to-b from-[#316a99ad] to-[#350429a4] rounded-lg  shadow-auth-box py-12 px-6 z-10'>
@@ -141,34 +141,34 @@ export default function signup() {
                 <div className='flex items-center mb-4'>
                     <div className=' mr-5'>
                         <div className='font-bold mb-2'>First Name <span className='text-[red]'>*</span></div>
-                        <input className="input-box bg-black rounded-lg px-4 py-2 border outline-black mr-0 text-xs md:text-sm lg:text-base placeholder:text-gray-300 text-gray-800 placeholder:font-base border-gray-200  border-none outline-none" placeholder='First Name' value={firstName} onChange={handleFirstChange} />
+                        <input className="input-box bg-black rounded-lg px-4 py-2 border outline-[#aaaaaa33] mr-0 text-xs md:text-sm lg:text-base placeholder:text-gray-300 text-gray-800 placeholder:font-base border-gray-200  border-none outline-none" placeholder='First Name' value={firstName} onChange={handleFirstChange} />
                     </div>
                     <div className=''>
                         <div className='font-bold mb-2'>Last Name <span className='text-[red]'>*</span></div>
-                        <input className="input-box bg-black rounded-lg px-4 py-2 border outline-black mr-0 text-xs md:text-sm lg:text-base placeholder:text-gray-300 text-gray-800 placeholder:font-base border-gray-200  border-none outline-none" placeholder='Last Name' value={lastName} onChange={handleLastChange} />
+                        <input className="input-box bg-black rounded-lg px-4 py-2 border outline-[#aaaaaa33] mr-0 text-xs md:text-sm lg:text-base placeholder:text-gray-300 text-gray-800 placeholder:font-base border-gray-200  border-none outline-none" placeholder='Last Name' value={lastName} onChange={handleLastChange} />
                     </div>
                 </div>
                 <div className=' mb-4'>
                     <div className='font-bold mb-2'>Email <span className='text-[red]'>*</span></div>
-                    <input className="input-box w-full bg-black rounded-lg px-4 py-2 border outline-black mr-0 text-xs md:text-sm lg:text-base placeholder:text-gray-300 text-gray-800 placeholder:font-base border-gray-200  border-none outline-none" placeholder='Email' value={email} onChange={handleEmailChange} required />
+                    <input className="input-box w-full bg-black rounded-lg px-4 py-2 border outline-[#aaaaaa33] mr-0 text-xs md:text-sm lg:text-base placeholder:text-gray-300 text-gray-800 placeholder:font-base border-gray-200  border-none outline-none" placeholder='Email' value={email} onChange={handleEmailChange} required />
                     {isNotValid && <div className='text-[red] mb-0 mt-1'>Enter a valid email address</div>}
                 </div>
                 <div className=' mb-4'>
                     <div className='font-bold mb-2'>Password <span className='text-[red]'>*</span></div>
-                    <input type='password' className="input-box w-full bg-black rounded-lg px-4 py-2 border outline-black mr-0 text-xs md:text-sm lg:text-base placeholder:text-gray-300 text-gray-800 placeholder:font-base border-gray-200  border-none outline-none" placeholder='Password' value={password} onChange={handlePasswordChange} />
+                    <input type='password' className="input-box w-full bg-black rounded-lg px-4 py-2 border outline-[#aaaaaa33] mr-0 text-xs md:text-sm lg:text-base placeholder:text-gray-300 text-gray-800 placeholder:font-base border-gray-200 focus:border-none focus:outline-none border-none outline-none" placeholder='Password' value={password} onChange={handlePasswordChange} />
                 </div>
 
                 <div className="flex items-center mb-4 mt-4">
-                    <input id="disabled-checkbox" type="checkbox" className="input-box w-4 h-4 focus:before:bg-black border-gray-300 text-orange rounded focus:ring-2 orange-check" checked={isTerms} onChange={() => setIsTerms(!isTerms)} />
-                    <label htmlFor="disabled-checkbox" className="ml-2 text-sm text-slight-text dark:text-gray-500">I agree to the Swush <Link href="" className='font-medium text-white'>Terms of Use</Link></label>
+                    <input id="disabled-checkbox" type="checkbox" className="w-4 h-4 text-gray-600 bg-[#4d495044] focus:before:bg-black border-gray-300 text-orange rounded focus:ring-2 orange-check" checked={isTerms} onChange={() => setIsTerms(!isTerms)} />
+                    <label htmlFor="disabled-checkbox" className="ml-2 text-sm text-slight-text dark:text-gray-500">I agree to the Swush <Link href="/terms" className='font-medium text-white'>Terms of Use</Link></label>
                 </div>
 
                 <div className="flex items-center">
-                    <input id="disabled-checked-checkbox" type="checkbox" value="" className="input-box w-4 h-4 text-orange bg-gray-100 border-gray-300 rounded focus:ring-red-500 focus:ring-2" checked={isPrivacy} onChange={() => setIsPrivacy(!isPrivacy)} />
-                    <label htmlFor="disabled-checked-checkbox" className="ml-2 text-sm text-slight-text dark:text-gray-500">I agree to the Swush <Link href="" className='font-medium text-white'>Privacy policy</Link></label>
+                    <input id="disabled-checked-checkbox" type="checkbox" value="" className="w-4 h-4 text-gray-600 bg-[#4d495044] border-gray-300 rounded  focus:ring-2" checked={isPrivacy} onChange={() => setIsPrivacy(!isPrivacy)} />
+                    <label htmlFor="disabled-checked-checkbox" className="ml-2 text-sm text-slight-text dark:text-gray-500">I agree to the Swush <Link href="/privacy" className='font-medium text-white'>Privacy policy</Link></label>
                 </div>
-                <button className='flex items-center justify-center bg-blue-button hover:bg-blue-button-hover rounded-lg w-full mt-7 py-3 font-bold' onClick={sign}>Join Now  &nbsp;<FaChevronRight className='text-xs' /></button>
-                <div className='w-full text-center mt-10'>Already have an account? <Link href='/login' className='font-bold'>Log In</Link></div>
+                <button className='flex items-center justify-center border hover:text-white rounded-lg w-full mt-7 py-3 font-bold' onClick={sign}>Join Now  &nbsp;<FaChevronRight className='text-xs' /></button>
+                <div className='w-full text-center mt-10'>Already have an account? <Link href='/login' className='font-bold hover:text-white'>Log In</Link></div>
             </div>
             <Snackbar
                 open={alertState.open}

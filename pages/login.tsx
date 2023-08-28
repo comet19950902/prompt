@@ -82,27 +82,27 @@ export default function login() {
     setPassword(e.target.value);
   };
   return (
-    <div className=' text-[#cccccc] min-w-screen min-h-screen flex flex-col py-6 items-center justify-center relative'>
+    <div className=' font-header text-[#cccccc] min-w-screen min-h-screen flex flex-col py-6 items-center justify-center relative'>
       <img className='absolute top-0 left-0 h-full w-full' src='/bg6.jpg' />
       {/* <Image src="/logo.png" width={200} height={100} alt='logo' className='mb-10' /> */}
       <div className='z-10 bg-gradient-to-b from-[#316a99ad] to-[#350429a4] rounded-lg  shadow-auth-box py-12 px-6'>
         <div className='text-3xl font-semibold font-mono text-center pb-8'>Log In</div>
         <div className='mb-6'>
-          <input className=" input-box bg-black w-full rounded-md px-4 py-2 border outline-black mr-0 text-xs md:text-sm lg:text-base placeholder:text-gray-300 text-gray-800 placeholder:font-base border-gray-200  border-none outline-none" placeholder='Email' value={email} name='email' onChange={handleEmailChange} />
+          <input className=" input-box w-full bg-black rounded-lg px-4 py-2 border outline-[#aaaaaa33] mr-0 text-xs md:text-sm lg:text-base placeholder:text-gray-300 text-gray-800 placeholder:font-base border-gray-200  border-none outline-none" placeholder='Email' value={email} name='email' onChange={handleEmailChange} />
           {isNotValid && <div className='text-[red] mb-0 mt-1'>Enter a valid email address</div>}
         </div>
         <div className='mb-4'>
-          <input type='password' className="input-box bg-black w-full rounded-md px-4 py-2 border outline-black mr-0 text-xs md:text-sm lg:text-base placeholder:text-gray-300 text-gray-800 placeholder:font-base border-gray-200  border-none outline-none" placeholder='Password' value={password} onChange={handlePasswordChange} />
+          <input type='password' className="input-box w-full bg-black rounded-lg px-4 py-2 border outline-[#aaaaaa33] mr-0 text-xs md:text-sm lg:text-base placeholder:text-gray-300 text-gray-800 placeholder:font-base border-gray-200  border-none outline-none" placeholder='Password' value={password} onChange={handlePasswordChange} />
         </div>
         <div className='flex justify-center items-center mt-8'>
-          <button className='bg-blue-button  hover:bg-blue-button-hover text-white rounded-md w-full py-2 px-5 font-bold mr-4'
+          <button className='bg-blue-button text-lg  hover:bg-blue-button-hover rounded-md w-full py-2 px-5 font-bold mr-4'
             onClick={handleLogin}
           >
-            <div className='flex items-center'>Join Now&nbsp; <FaChevronRight className='text-xs' /></div>
+            <div className='flex items-center rounded-lg hover:text-white'>Join Now&nbsp; <FaChevronRight className='text-xs' /></div>
           </button>
           <Link href='' className='text-slight-text hover:text-white font-bold whitespace-nowrap text-sm pr-12'>Forgot Password?</Link>
         </div>
-        <div className='w-full text-center mt-14'>Don&apos;t have an account? <Link href='/signup' className='font-bold'>Sign Up</Link></div>
+        <div className='w-full text-center mt-14'>Don&apos;t have an account? <Link href='/signup' className='font-bold hover:text-white'>Sign Up</Link></div>
       </div>
       <Snackbar
         open={alertState.open}
