@@ -66,7 +66,7 @@ export default function login() {
 
             //   // else successful
             //   console.log(result)
-            router.push('/app/account');
+            router.push('/');
         } else {
             // email is invalid, so display an error message
             // alert("Please enter a valid email address.");
