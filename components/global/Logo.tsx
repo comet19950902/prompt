@@ -10,7 +10,7 @@ const Logo:React.FC<Props> = ({clasLog}) => {
             <div className=' text-[transparent] bg-clip-text bg-gradient-to-r from-[#01dcff] to-[#fe01d4]'>
                 <div className='flex flex-col justify-center'>
                     <div className={`${clasLog ? 'text-4xl' : ' md:text-4xl text-lg ' } leading-tight`}>Resources</div>
-                    <div className={`${clasLog ? 'text-[32px]' : ' md:text-[32px]  ' } text-base leading-none`}>Marketplace</div>
+                    <div className={`${clasLog ? 'text-[32px]' : ' md:text-[32px] text-base ' }  leading-none`}>Marketplace</div>
                 </div>
             </div>
         </div>
