@@ -5,7 +5,7 @@ import Privacy from '@/components/privacy/privacy'
 
 export default function price() {
   return (
-    <div className='bg-[white]'>
+    <div className='bg-[white] font-body'>
         <Header />
         <Privacy />
         <Footer />

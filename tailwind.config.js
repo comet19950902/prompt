@@ -12,8 +12,8 @@ module.exports = {
     //   'cus-lg': '1150px'
     // },
     fontFamily: {
-      body: ['iowan-old-style', ...defaultTheme.fontFamily.sans],
-      header: ['whiskey-font-one', ...defaultTheme.fontFamily.serif],
+      body: ['finlandica-font-normal', ...defaultTheme.fontFamily.sans],
+      header: ['finlandica-font-normal', ...defaultTheme.fontFamily.serif],
     },
     extend: {
       fontFamily: {
@@ -44,9 +44,17 @@ module.exports = {
       "bg-purple": '#0A0219',
       "main-blue": "#1845F3",
       "card-bg": '#010518',
+      "custom-orange": "#D84C10",
+      "egg-plant": "#232627",
+      'nav-grey': "#404551",
+      "dark-grey": '#96999E',
+      "custom-purple": '#8E55EA',
+      "custom-blue": '#3E90F0',
+      "custom-green": '#52BA69',
+      "dodger-purple": "#8C6584",
     },
   },
   plugins: [
     require('flowbite/plugin')
-]
+  ]
 }

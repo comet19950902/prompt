@@ -20,7 +20,7 @@ export default function MainPage () {
         { category: '', imageUrl: ['/aiImage/1 (5).jfif', '/aiImage/1 (1).jpg', '/aiImage/1 (1).png', '/aiImage/1 (11).jfif' ], description: 'Blue Simple Drawings', sales: 52, thumb: 33 },
     ]
     return (
-        <div className='w-full items-center bg-[white] font-Urbansit flex flex-col gap-16 py-8'>
+        <div className='w-full items-center bg-[white] flex flex-col gap-16 py-8'>
             <Title />
             <div className='w-full flex flex-col'>
                 <div className='md:mx-40 mb-4 mx-12 w-full pb-4 font-semibold  text-3xl title-shadow text-[#555]'>
@@ -65,7 +65,7 @@ export default function MainPage () {
                 </div>
                 <Slider compArray={freeRes} />
             </div>
-            <Link href="" className="mt-8 mb-16 relative text-[white] font-semibold px-8 py-4 text-white hover:bg-[#0349a4] rounded-md shadow-card-upload-black bg-[#0084FF] text-xl">
+            <Link href="" className="mt-8 mb-16 relative font-semibold px-8 py-4 text-white hover:bg-[#0349a4] rounded-md shadow-card-upload-black bg-[#0084FF] text-xl">
                 Browse Marketplace
             </Link>
         </div>
