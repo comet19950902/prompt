@@ -30,7 +30,7 @@ const Individual: React.FC<Props> = ({ title, author, desc, url }) => {
                         {desc}
                     </div>
                 </div>
-                <div className='w-full flex-shrink-0 md:w-[30%] min-h-full rounded-lg bg-gradient-to-b from-[#316a99ab] to-[#202c3089]'></div>
+                <div className='w-full flex-shrink-0 md:w-[30%] min-h-full'></div>
             </div>
             <div className='w-full flex justify-center items-center z-10 mt-32'>
                 <div className='text-5xl font-semibold text-[transparent] bg-clip-text bg-gradient-to-r from-[#01dcff] to-[#fe01d4] '>Most Popular Articles</div>
