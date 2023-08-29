@@ -64,7 +64,7 @@ export default function RecentArticles() {
             <div className='mt-20'>
                 {
                     recentData.map((data, index) => (
-                        <RecentArticlesComp url={data.url} title={data.title} author={data.author} comments={data.comments} favorites={data.favorites} />
+                        <RecentArticlesComp url={data.url} title={data.title} author={data.author} comments={data.comments} favorites={data.favorites} key={index}/>
                     ))
                 }
             </div>

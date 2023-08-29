@@ -4,7 +4,7 @@ import { Autoplay } from 'swiper/modules'
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import CarouselComp from "./CarouselComp";
-import React,{ useState } from "react";
+import React, { useState } from "react";
 import { classNames } from "../../utils/misc";
 import styles from "./styles.module.css";
 
@@ -53,41 +53,43 @@ SwiperCore.use([Autoplay]);
 const SwiperCarousel = () => {
     const [currentSlide, setCurrentSlide] = React.useState(1);
     return (
-        <Swiper
-            loop={true}
-            initialSlide={1}
-            spaceBetween={0}
-            slidesPerView={3}
-            autoplay={{
-                delay: 5000,
-            }}
-            onSlideChange={(swiper) => {
-                setCurrentSlide((swiper.realIndex + 1) % projects.length);
-            }}
-        >
-            {projects.map((project, i) => (
-                <SwiperSlide
-                    key={i}
-                    className={classNames(
-                        "py-[10%] cursor-pointer",
-                        i == currentSlide && "z-10"
-                    )}
-                    style={{ width: 500 }}
-                >
-                    <div className="relative pb-[125%]">
-                        <div
-                            className={classNames(
-                                "absolute inset-0 transition-all",
-                                styles.glow,
-                                i == currentSlide && "inset-[-20%]"
-                            )}
-                        >
-                            <CarouselComp name={project.name} image={project.image} description={project.description} />
+        <div className="flex w-full z-10 md:px-40 py-20 justify-center">
+            <Swiper
+                loop={true}
+                initialSlide={1}
+                spaceBetween={0}
+                slidesPerView={3}
+                autoplay={{
+                    delay: 5000,
+                }}
+                onSlideChange={(swiper) => {
+                    setCurrentSlide((swiper.realIndex + 1) % projects.length);
+                }}
+            >
+                {projects.map((project, i) => (
+                    <SwiperSlide
+                        key={i}
+                        className={classNames(
+                            "py-[10%] cursor-pointer",
+                            i == currentSlide && "z-10"
+                        )}
+                        style={{ width: 500 }}
+                    >
+                        <div className="relative pb-[125%]">
+                            <div
+                                className={classNames(
+                                    "absolute inset-0 transition-all",
+                                    styles.glow,
+                                    i == currentSlide && "inset-[-20%]"
+                                )}
+                            >
+                                <CarouselComp name={project.name} image={project.image} description={project.description} />
+                            </div>
                         </div>
-                    </div>
-                </SwiperSlide>
-            ))}
-        </Swiper>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+        </div>
     );
 }
 
