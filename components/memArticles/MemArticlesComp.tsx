@@ -14,8 +14,8 @@ const MemArticlesComp:React.FC<Props> = ({title, image}) => {
             {image.map((img, index) => (
                 <div className='w-full outline-2 p-1 rounded-lg shadow-card-upload relative' key={index}>
                     <img src={img} className='w-full h-full rounded-lg' alt='ddd'/>
-                    <div className='absolute bottom-0 left-0 w-full bg-[#ffffffcc] justify-between truncate text-[black] rounded-b-lg px-3 py-2 font-semibold flex'>
-                        {title}
+                    <div className='absolute bottom-0 left-0 w-full  bg-[#ffffffcc] justify-between  text-[black] rounded-b-lg px-4 py-2 font-semibold flex'>
+                        <div className='w-[90%] truncate'>{title}</div>
                     </div>
                 </div>
             ))}
