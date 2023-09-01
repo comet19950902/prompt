@@ -465,15 +465,6 @@ export default function Marketplace() {
     setChildren(newChildren);
   }
 
-  const removeNewDiv = () => {
-    const foxElement = foxRef.current;
-    if (foxElement) {
-      const newDivElement = foxElement.querySelector('[data-key="newDiv"]');
-      if (newDivElement) {
-        newDivElement.remove();
-      }
-    }
-  };
 
   return (
     <div className='flex font-header w-full shadow-card-upload-black py-4 px-4'>
