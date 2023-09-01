@@ -411,7 +411,7 @@ export default function Marketplace() {
       window.addEventListener('resize', handleResize);
     }
     console.log(screenSize, 'screenSizeScreenSzie')
-    let newRows;
+    let newRows = 4;
     // Check if the screen size is between 768px and 1024px
     if (screenSize > 1024) {
       newRows = 4;
@@ -438,7 +438,7 @@ export default function Marketplace() {
     const newScreenSize = window.innerWidth;
 
     console.log(screenSize, 'screenSizeScreenSzie')
-    let newRows;
+    let newRows=4;
     // Check if the screen size is between 768px and 1024px
     if (newScreenSize > 1024) {
       newRows = 4;
