@@ -21,8 +21,8 @@ const MemArticlesComp:React.FC<Props> = ({title, image}) => {
         </div>
         <div className='grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 gap-3 py-6 px-4 rounded-2xl shadow-card-upload-black'>
             {image.map((img, index) => (
-                <div className='w-full outline-2 p-1 rounded-lg shadow-card-upload relative cursor-pointer' key={index}>
-                    <img src={img} className='w-full h-full rounded-lg' alt='ddd' onClick={() => handleClick(img)}/>
+                <div className='w-full aspect-[2/3] outline-2 p-1 rounded-lg shadow-card-upload relative cursor-pointer' key={index}>
+                    <img src={img} className='w-full h-full rounded-lg object-cover object-center' alt='ddd' onClick={() => handleClick(img)}/>
                 </div>
             ))}
         </div>
