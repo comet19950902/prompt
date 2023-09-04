@@ -83,7 +83,7 @@ export default function ContactUs() {
                     />
                     <label
                         htmlFor="message"
-                        className="text-gray-500 font-light dark:text-gray-50 mb-3"
+                        className="text-gray-500 font-light dark:text-gray-50 mt-6 mb-3"
                     >
                         Message<span className="text-red-500">*</span>
                     </label>

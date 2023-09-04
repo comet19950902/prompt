@@ -54,7 +54,7 @@ const DesktopMenu = () => {
                     Pricing
                 </Link>
                 <Link
-                    href=""
+                    href="/sell"
                     className={classNames(
                         buttonClass,
                         themeColors["blue"].desktopMenu.item["normal"]
@@ -151,7 +151,7 @@ const MobileMenu = () => {
                                 </Fragment>
                                 <Fragment>
                                     <Link
-                                        href=""
+                                        href="/sell"
                                         className={classNames(
                                             mobileNavItemClass,
                                             themeColors["blue"].mobileMenu.item["normal"]
@@ -228,7 +228,7 @@ const MobileMenu = () => {
                                 </Fragment>
                                 <Fragment>
                                     <Link
-                                        href=""
+                                        href="/contact"
                                         className={classNames(
                                             mobileNavItemClass,
                                             themeColors["blue"].mobileMenu.item["normal"]
@@ -329,7 +329,7 @@ export default function Header() {
                     <div>FAQ</div>
                 </Link>
                 <Link
-                    href=""
+                    href="/contact"
                     className={`${classNames(
                         mobileNavItemClass,
                         themeColors["blue"].mobileMenu.item["normal"]
