@@ -5,7 +5,8 @@ import SingleUploadBtn from './SingleUploadBtn'
 import { Snackbar } from '@material-ui/core'
 import Alert from '@material-ui/lab/Alert'
 import { AlertState } from '@/components/utils/misc';
-
+import Image from 'next/image'
+import PlusBtn from './PlusBtn'
 
 export default function Sell() {
     const genres = ['Midjourney', 'GPT'];
@@ -17,6 +18,7 @@ export default function Sell() {
         severity: undefined,
     })
     const [imageState, setImageState] = React.useState(false);
+    const [isNeedAdd, setIsNeedAdd] = React.useState(false);
     const [isPrompt, setIsPrompt] = React.useState(true);
     const [isFour, setIsFour] = React.useState(false);
     const [isPlugin, setPlugin] = React.useState(false);
@@ -26,6 +28,11 @@ export default function Sell() {
             setImageState(true);
             const imageUrls = Object.values(files).map((file) => URL.createObjectURL(file));
             setImages(imageUrls);
+            if(files.length < 5) {
+                setIsNeedAdd(true);
+            } else {
+                setIsNeedAdd(false);
+            }
         } else {
             setAlertState({
                 open: true,
@@ -33,6 +40,11 @@ export default function Sell() {
                 severity: 'error',
             })
         }
+    };
+    const handleAdd = (files: FileList) => {
+        const imageUrls = Object.values(files).map((file) => URL.createObjectURL(file));
+        const updatedUrls = [...images, imageUrls[0]]
+        setImages(updatedUrls);
     };
     const handleGenre = (event: { target: { value: any; }; }) => {
         const selectedOption = event.target.value;
@@ -58,6 +70,17 @@ export default function Sell() {
             setPlugin(false);
         }
     };
+    React.useEffect(()=>{
+        setImages([]);
+    }, [isPrompt])
+    React.useEffect(()=>{
+        if(images.length == 0) {
+            setImageState(false);
+        }
+        if(images.length == 5) {
+            setIsNeedAdd(false);
+        }
+    }, [images])
     return (
         <div className="flex w-full px-16 md:px-24 lg:px-40 py-20 flex-col items-center shadow-card-upload-black relative text-white bg-[#000000f0] before:absolute before:content-[' '] before:top-0 before:left-0 before:bottom-0 before:right-0 before:bg-[url(/UnicornGradients/6.jpg)] before:opacity-30 before:bg-cover">
             {/* <img className='absolute top-0 left-0 h-full w-full' src='/UnicornGradients/6.jpg' /> */}
@@ -151,10 +174,11 @@ export default function Sell() {
                             {imageState && (
                                 <div className='grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 gap-3 py-6 px-4 rounded-2xl shadow-card-upload-black'>
                                     {images.map((img, index) => (
-                                        <div className='w-full aspect-square outline-2 p-1 rounded-lg shadow-card-upload relative cursor-pointer' key={index}>
-                                            <img src={img} className='w-full h-full rounded-lg object-cover object-center' alt='ddd' />
+                                        <div className='w-full aspect-square outline-2 p-1 rounded-lg shadow-card-upload relative' key={index}>
+                                            <Image src={img} className='p-1 w-full h-full rounded-lg object-cover object-center' alt='ddd' fill={true} />
                                         </div>
                                     ))}
+                                    {isNeedAdd && (<PlusBtn onImageUpload={handleAdd} />)}
                                 </div>
                             )}
                         </div>
@@ -166,7 +190,7 @@ export default function Sell() {
                                 <div className='p-2 w-[250px] flex flex-col md:items-start items-center  rounded-2xl shadow-card-upload-black'>
                                     {images.map((img, index) => (
                                         <div className='w-full aspect-square outline-2 p-1 rounded-lg shadow-card-upload relative cursor-pointer' key={index}>
-                                            <img src={img} className='w-full h-full rounded-lg object-cover object-center' alt='ddd' />
+                                            <Image src={img} className='w-full p-1 h-full rounded-lg object-cover object-center' alt='ddd' fill={true} />
                                         </div>
                                     ))}
                                 </div>
@@ -197,7 +221,7 @@ export default function Sell() {
                 </div>
                 <div className='my-8 px-4'>
                     <div className='text-xl font-semibold mb-2'><span className='text-red-500'>* </span>Example of Prompt</div>
-                    ((!isPrompt) && (<div className=''>Provide a complete example of the prompt with [variable] filled in.</div>))
+                    {(!isPrompt) && (<div className=''>Provide a complete example of the prompt with [variable] filled in.</div>)}
                     <textarea
                         className=" w-full resize-y bg-transparent border-b border-white py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 focus:ring-white focus:border-none font-light text-white"
                     ></textarea>
@@ -215,7 +239,7 @@ export default function Sell() {
                     <div className='my-8 px-4'>
                         <div className='text-xl font-semibold mb-1'><span className='text-red-500'>* </span>Chat GPT share chat link</div>
                         <div className='italic font-semibold px-4 mb-2'>Please refrain from deleting the &quot;Chat&quot; in your Chat GPT model before verification.</div>
-                        <input className="bg-transparent border border-white py-2 pl-4 pr-8 focus:outline-none focus:rounded-md focus:ring-1 ring-white focus:border-none font-light text-white w-full " />
+                        <input className="bg-transparent border border-white py-2 pl-4 pr-8 focus:outline-none focus:rounded-md focus:ring-1 ring-white focus:border-none font-light text-white w-full " placeholder='https://chat.openai.com/share/00000000-0000-0000-0000-0000000000'/>
                     </div>
                 )}
             </div>
