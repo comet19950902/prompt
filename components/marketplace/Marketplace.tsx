@@ -467,7 +467,7 @@ export default function Marketplace() {
 
 
   return (
-    <div className='flex font-header w-full shadow-card-upload-black py-4 px-4'>
+    <div className='flex font-header w-full shadow-card-upload-black py-4 px-4 lg:pt-[84px]'>
       <div className='fixed left-0 bottom-4 pl-3 pr-4 py-3 cursor-pointer rounded-r-full bg-gradient-to-r from-[#01dcff] to-[#fe01d4] text-white outline-2 outline-double text-xl shadow-hover-start-btn ' onClick={() => setFilter(true)}>
         <FaSlidersH />
       </div>

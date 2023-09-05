@@ -22,7 +22,13 @@ const themeColors = {
         },
         desktopMenu: {
             item: {
-                normal: "text-[#555] hover:text-[black]",
+                normal: "text-white hover:scale-105",
+                active: "text-[black]",
+            },
+        },
+        subMenu: {
+            item: {
+                normal: "text-[#aaa] hover:scale-105 hover:text-white",
                 active: "text-[black]",
             },
         },
@@ -33,8 +39,8 @@ const DesktopMenu = () => {
     const buttonClass = "p-2 text-xl font-semibold font-header transition-colors cursor-pointer";
     const [show, setShow] = useState(false);
     return (
-        <Popover.Group className="max-xl:hidden flex items-center space-x-5 sm:space-x-10 bg-[white]">
-            <div className="flex space-x-0 sm:space-x-6">
+        <Popover.Group className="max-xl:hidden flex items-center space-x-5 sm:space-x-10 ">
+            <div className="flex space-x-0 sm:space-x-6 z-10">
                 <Link
                     href=""
                     className={classNames(
@@ -88,7 +94,7 @@ const MobileMenu = () => {
         <Popover className='z-50'>
             <Popover.Button className="block xl:hidden font-medium focus-[white]">
                 <span className="sr-only">Open main menu</span>
-                <FaLayerGroup className="h-8 w-8 mr-6 text-[#555] hover:text-[black]" aria-hidden="true" />
+                <FaLayerGroup className="h-8 w-8 mr-6 text-[#424fc5] hover:text-white" aria-hidden="true" />
             </Popover.Button>
 
             <Transition
@@ -106,7 +112,7 @@ const MobileMenu = () => {
                 >
                     <div
                         className={classNames(
-                            "relative rounded-lg shadow-md ring-1 ring-black ring-opacity-5 overflow-hidden bg-gradient-to-bl",
+                            "relative rounded-lg  ring-1 ring-black ring-opacity-5 overflow-hidden bg-[#ccc]",
                             themeColors["blue"].mobileMenu.bg
                         )}
                     >
@@ -257,18 +263,18 @@ export default function Header() {
     const Component = useOnce("Header") ? motion.div : "div";
 
     return (
-        <div className='py-3 sm:pt-12 px-0 sm:px-6 flex flex-col w-full shadow-card-upload-black z-50'>
-            <div className='flex w-full justify-between items-center'>
+        <div className='flex flex-col w-full z-50 relative'>
+            <div className="flex w-full justify-between bg-black items-center px-0 sm:px-12  py-4  pt-6 before:absolute before:content-[' '] before:top-0 before:left-0 before:bottom-0 before:right-0 before:bg-[url(/gradient/8.jpg)] before:opacity-80 before:bg-cover shadow-card-upload-black z-[100]">
                 <Link
                     href="/"
                     className="flex shrink-0 overflow-visible"
                 >
                     <Logo />
                 </Link>
-                <div className="py-2 border border-[#555] rounded-md w-full relative text-[black] font-header ml-4 mr-4 md:ml-6 md:mr-10 lg:ml-10 lg:mr-16">
-                    <input className="outline-none border-none focus:border-none active:outline-none flex input-box bg-[transparent] text-black h-10 pl-5 rounded-lg focus:outline-none focus:bg-[transparent] text-lg md:text-2xl"
+                <div className=" bg-white rounded-md w-full relative text-[black] font-header ml-4 mr-4 md:ml-6 md:mr-10 lg:ml-10 lg:mr-16">
+                    <input className="outline-none border-none focus:border-none active:outline-none flex input-box bg-white text-black py-2 pl-5 pr-16 rounded-lg w-full focus:outline-none focus:bg-[transparent] text-lg md:text-2xl "
                         type="search" name="search" placeholder="Search" />
-                    <button type="submit" className="absolute right-0 top-0 mt-4 mr-4 text-dark-grey">
+                    <button type="submit" className="absolute right-0 top-0 mt-3 mr-4 text-dark-grey">
                         <FaSearchengin className='text-2xl text-[#bbb]' />
                     </button>
                 </div>
@@ -277,12 +283,12 @@ export default function Header() {
                     <MobileMenu />
                 </div>
             </div>
-            <div className='lg:flex font-semibold w-full hidden md:px-10 lg:px-20 justify-between mt-3 items-center'>
+            <div className=' absolute bottom-[-72px] lg:flex font-semibold w-full hidden md:px-10 lg:px-20 justify-between items-center rounded-b-xl bg-gradient-to-b from-[#0e0c25d2] to-[#051a2591]'>
                 <Link
                     href=""
                     className={`${classNames(
                         mobileNavItemClass,
-                        themeColors["blue"].mobileMenu.item["normal"]
+                        themeColors["blue"].subMenu.item["normal"]
                     )} flex items-center`}
                 >
                     <FaChessKing className='mr-3 text-2xl' />
@@ -292,7 +298,7 @@ export default function Header() {
                     href="/blog"
                     className={`${classNames(
                         mobileNavItemClass,
-                        themeColors["blue"].mobileMenu.item["normal"]
+                        themeColors["blue"].subMenu.item["normal"]
                     )} flex items-center`}
                 >
                     <FaMicroblog className='mr-2 text-3xl' />
@@ -302,7 +308,7 @@ export default function Header() {
                     href=""
                     className={`${classNames(
                         mobileNavItemClass,
-                        themeColors["blue"].mobileMenu.item["normal"]
+                        themeColors["blue"].subMenu.item["normal"]
                     )} flex items-center`}
                 >
                     <FaNewspaper className='mr-2 text-3xl' />
@@ -312,7 +318,7 @@ export default function Header() {
                     href=""
                     className={`${classNames(
                         mobileNavItemClass,
-                        themeColors["blue"].mobileMenu.item["normal"]
+                        themeColors["blue"].subMenu.item["normal"]
                     )} flex items-center flex-nowrap`}
                 >
                     <FaGofore className='mr-3 text-3xl' />
@@ -322,7 +328,7 @@ export default function Header() {
                     href="/faq"
                     className={`${classNames(
                         mobileNavItemClass,
-                        themeColors["blue"].mobileMenu.item["normal"]
+                        themeColors["blue"].subMenu.item["normal"]
                     )} flex items-center`}
                 >
                     <FaQuestion className='mr-2 text-2xl' />
@@ -332,7 +338,7 @@ export default function Header() {
                     href="/contact"
                     className={`${classNames(
                         mobileNavItemClass,
-                        themeColors["blue"].mobileMenu.item["normal"]
+                        themeColors["blue"].subMenu.item["normal"]
                     )} flex items-center`}
                 >
                     <FaPhoneAlt className='mr-2 text-2xl' />
