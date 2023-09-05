@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaBurn, FaChevronDown } from 'react-icons/fa'
+import { FaBurn, FaChevronDown, FaTimes } from 'react-icons/fa'
 import ImageUploadBtn from './ImageUploadBtn'
 import SingleUploadBtn from './SingleUploadBtn'
 import { Snackbar } from '@material-ui/core'
@@ -28,7 +28,7 @@ export default function Sell() {
             setImageState(true);
             const imageUrls = Object.values(files).map((file) => URL.createObjectURL(file));
             setImages(imageUrls);
-            if(files.length < 5) {
+            if (files.length < 5) {
                 setIsNeedAdd(true);
             } else {
                 setIsNeedAdd(false);
@@ -45,6 +45,11 @@ export default function Sell() {
         const imageUrls = Object.values(files).map((file) => URL.createObjectURL(file));
         const updatedUrls = [...images, imageUrls[0]]
         setImages(updatedUrls);
+    };
+    const handleDelete = (key: number) => {
+        const updatedImages = [...images]; // Create a new array with the same elements
+        updatedImages.splice(key, 1); // Remove one element at index key
+        setImages(updatedImages); // Set the state with the new array
     };
     const handleGenre = (event: { target: { value: any; }; }) => {
         const selectedOption = event.target.value;
@@ -70,14 +75,14 @@ export default function Sell() {
             setPlugin(false);
         }
     };
-    React.useEffect(()=>{
+    React.useEffect(() => {
         setImages([]);
     }, [isPrompt])
-    React.useEffect(()=>{
-        if(images.length == 0) {
+    React.useEffect(() => {
+        if (images.length == 0) {
             setImageState(false);
         }
-        if(images.length == 5) {
+        if (images.length == 5) {
             setIsNeedAdd(false);
         }
     }, [images])
@@ -176,6 +181,9 @@ export default function Sell() {
                                     {images.map((img, index) => (
                                         <div className='w-full aspect-square outline-2 p-1 rounded-lg shadow-card-upload relative' key={index}>
                                             <Image src={img} className='p-1 w-full h-full rounded-lg object-cover object-center' alt='ddd' fill={true} />
+                                            <div className='p-2 absolute top-2 right-2 bg-[#090e293a] rounded-full text-[#d3dcff70] hover:text-white cursor-pointer' onClick={() => handleDelete(index)}>
+                                                <FaTimes className='text-xl' />
+                                            </div>
                                         </div>
                                     ))}
                                     {isNeedAdd && (<PlusBtn onImageUpload={handleAdd} />)}
@@ -232,16 +240,16 @@ export default function Sell() {
                         className=" w-full resize-y bg-transparent border-b border-white py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 focus:ring-white focus:border-none font-light text-white"
                     ></textarea>
                 </div>
-                <div className='my-8 px-4 flex w-full justify-center items-center'>
-                    <div className='py-2 px-8 rounded-xl shadow-card-upload text-2xl hover:shadow-card-upload-black cursor-pointer hover:bg-[#aaaaaa22]'>Submit for Approval</div>
-                </div>
                 {(!isPrompt) && (
                     <div className='my-8 px-4'>
                         <div className='text-xl font-semibold mb-1'><span className='text-red-500'>* </span>Chat GPT share chat link</div>
                         <div className='italic font-semibold px-4 mb-2'>Please refrain from deleting the &quot;Chat&quot; in your Chat GPT model before verification.</div>
-                        <input className="bg-transparent border border-white py-2 pl-4 pr-8 focus:outline-none focus:rounded-md focus:ring-1 ring-white focus:border-none font-light text-white w-full " placeholder='https://chat.openai.com/share/00000000-0000-0000-0000-0000000000'/>
+                        <input className="bg-transparent border border-white py-2 pl-4 pr-8 focus:outline-none focus:rounded-md focus:ring-1 ring-white focus:border-none font-light text-white w-full " placeholder='https://chat.openai.com/share/00000000-0000-0000-0000-0000000000' />
                     </div>
                 )}
+                <div className='my-8 px-4 flex w-full justify-center items-center'>
+                    <div className='py-2 px-8 rounded-xl shadow-card-upload text-2xl hover:shadow-card-upload-black cursor-pointer hover:bg-[#aaaaaa22]'>Submit for Approval</div>
+                </div>
             </div>
             <Snackbar
                 open={alertState.open}
