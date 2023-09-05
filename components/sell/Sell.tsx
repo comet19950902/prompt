@@ -58,7 +58,7 @@ export default function Sell() {
                     )}
                 </div>
             </div>
-            <div className='z-10'>
+            <div className='z-10 w-full'>
                 <div className=''>
                     <div className='text-3xl font-semibold mb-2'><span className='text-red-500'>* </span>Prompt Section</div>
                     <div className='italic font-semibold'>(The information shared here will become visible only after users successfully purchase / review prompts.)</div>
