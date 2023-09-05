@@ -14,15 +14,34 @@
 //   };
 //   export default FreeGpt;
 
+import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import ReactDOMServer from 'react-dom/server';
+import { FaBurn } from 'react-icons/fa';
 
 interface Props {
   markdownContent: string;
 }
 
 const FreeGpt: React.FC<Props> = ({ markdownContent }) => {
+  React.useEffect(() => {
+    const foxElement = document.getElementById('fox');
+    if (foxElement) {
+      const h2Elements = foxElement.getElementsByTagName('h2');
+      for (let i = 0; i < h2Elements.length; i++) {
+        const h2Element = h2Elements[i];
+        const isExist = h2Element.getElementsByClassName('red-bull');
+        const iconElement = document.createElement('span');
+        const iconHtml = ReactDOMServer.renderToString(<FaBurn className='text-cus-pink inline-block pb-[13px] mr-2 grow-0 red-bull'/>);
+        const parser = new DOMParser();
+        const iconNode = parser.parseFromString(iconHtml, 'text/html').body.firstChild;
+        !(isExist.length) && iconNode && iconElement.appendChild(iconNode);
+        h2Element.insertBefore(iconElement, h2Element.childNodes[0]);
+      }
+    }
+  }, []);
   return (
-    <div className={`lg:pt-[90px] px-4 md:px-16 lg:px-40 py-20 shadow-card-upload-black relative flex flex-col min-w-full prose lg:prose-xl text-black before:absolute before:content-[' '] before:top-0 before:left-0 before:bottom-0 before:right-0 before:bg-[url(/gradient/10.jpg)] before:opacity-80 before:bg-cover before:-z-0 fox font-header`}>
+    <div className={`lg:pt-[90px] px-4 md:px-16 lg:px-40 py-20 shadow-card-upload-black relative flex flex-col min-w-full prose lg:prose-xl text-black before:absolute before:content-[' '] before:top-0 before:left-0 before:bottom-0 before:right-0 before:bg-[url(/gradient/10.jpg)] before:opacity-80 before:bg-cover before:-z-0 fox font-header`} id='fox'>
       <ReactMarkdown className='z-20'>{markdownContent}</ReactMarkdown>
     </div>
   );
