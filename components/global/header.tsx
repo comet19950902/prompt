@@ -264,7 +264,7 @@ export default function Header() {
 
     return (
         <div className='flex flex-col w-full z-50 relative'>
-            <div className="flex w-full justify-between bg-black items-center px-0 sm:px-12  py-4  pt-6 before:absolute before:content-[' '] before:top-0 before:left-0 before:bottom-0 before:right-0 before:bg-[url(/gradient/8.jpg)] before:opacity-80 before:bg-cover shadow-card-upload-black z-[100]">
+            <div className="flex w-full justify-between bg-black items-center px-0 sm:px-12  py-4  pt-6 before:absolute before:content-[' '] before:top-0 before:left-0 before:bottom-0 before:right-0 before:bg-[url(/gradient/13.jpg)] before:opacity-90 before:bg-cover shadow-card-upload-black z-[100]">
                 <Link
                     href="/"
                     className="flex shrink-0 overflow-visible"
@@ -283,7 +283,7 @@ export default function Header() {
                     <MobileMenu />
                 </div>
             </div>
-            <div className=' absolute bottom-[-72px] lg:flex font-semibold w-full hidden md:px-10 lg:px-20 justify-between items-center rounded-b-xl bg-gradient-to-b from-[#0e0c25d2] to-[#051a2591]'>
+            <div className=' absolute bottom-[-72px] lg:flex font-semibold w-full hidden md:px-10 lg:px-20 justify-between items-center bg-[#163853]'>
                 <Link
                     href=""
                     className={`${classNames(
