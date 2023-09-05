@@ -84,6 +84,8 @@ export default function Sell() {
         }
         if (images.length == 5) {
             setIsNeedAdd(false);
+        } else if (images.length < 5) {
+            setIsNeedAdd(true);
         }
     }, [images])
     return (
