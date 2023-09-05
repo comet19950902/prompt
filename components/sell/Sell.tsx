@@ -14,7 +14,7 @@ export default function Sell() {
         }
     };
     return (
-        <div className="flex w-full px-16 md:px-24 py-20 flex-col items-center shadow-card-upload-black relative text-white bg-black before:absolute before:content-[' '] before:top-0 before:left-0 before:bottom-0 before:right-0 before:bg-[url(/UnicornGradients/6.jpg)] before:opacity-30 before:bg-cover">
+        <div className="flex w-full px-16 md:px-24 lg:px-40 py-20 flex-col items-center shadow-card-upload-black relative text-white bg-black before:absolute before:content-[' '] before:top-0 before:left-0 before:bottom-0 before:right-0 before:bg-[url(/UnicornGradients/6.jpg)] before:opacity-30 before:bg-cover">
             {/* <img className='absolute top-0 left-0 h-full w-full' src='/UnicornGradients/6.jpg' /> */}
             {/* <div className='absolute top-0 left-0 h-full w-full bg-[#00000081] z-[5]'></div> */}
             <div className='font-header text-glow lg:text-6xl md:text-4xl text-center text-3xl px-2 lg:mb-8 md:mb-4 font-bold z-10 tracking-wider '>Sell Your Prompts</div>
