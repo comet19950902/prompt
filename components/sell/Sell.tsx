@@ -18,7 +18,7 @@ export default function Sell() {
             {/* <img className='absolute top-0 left-0 h-full w-full' src='/UnicornGradients/6.jpg' /> */}
             {/* <div className='absolute top-0 left-0 h-full w-full bg-[#00000081] z-[5]'></div> */}
             <div className='font-header text-glow lg:text-6xl md:text-4xl text-center text-3xl px-2 lg:mb-8 md:mb-4 font-bold z-10 tracking-wider '>Sell Your Prompts</div>
-            <div className='z-10 mb-10'>
+            <div className='z-10 mb-10 w-full'>
                 <div className=''>
                     <div className='text-3xl font-semibold'>Cover Section</div>
                     <div className='italic font-semibold'>(The information provided here will be visible to the public. Please avoid including the prompts within this section )</div>
