@@ -199,6 +199,9 @@ export default function Sell() {
                                     {images.map((img, index) => (
                                         <div className='w-full aspect-square outline-2 p-1 rounded-lg shadow-card-upload relative cursor-pointer' key={index}>
                                             <Image src={img} className='w-full p-1 h-full rounded-lg object-cover object-center' alt='ddd' fill={true} />
+                                            <div className='p-2 absolute top-2 right-2 bg-[#090e293a] rounded-full text-[#d3dcff70] hover:text-white cursor-pointer' onClick={() => handleDelete(index)}>
+                                                <FaTimes className='text-xl' />
+                                            </div>
                                         </div>
                                     ))}
                                 </div>
