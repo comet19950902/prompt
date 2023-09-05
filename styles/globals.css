@@ -270,3 +270,20 @@ a {
   margin-bottom: 1em;
 }
 
+.fox h2 {
+  color: black;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(80, 80, 80, 0.479);
+}
+.fox a {
+  color: rgba(95, 4, 214, 0.705);
+  margin-right: 5px;
+  margin-left: 5px;
+  text-decoration: none;
+}
+.fox p {
+  color: rgba(0, 0, 0, 0.733);
+}
+.fox strong {
+  margin-left: 10px;
+}
