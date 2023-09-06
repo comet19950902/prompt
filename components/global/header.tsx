@@ -28,7 +28,7 @@ const themeColors = {
         },
         subMenu: {
             item: {
-                normal: "text-[#aaa] hover:scale-105 hover:text-white",
+                normal: "text-white hover:scale-105 hover:text-white",
                 active: "text-[black]",
             },
         },
@@ -264,15 +264,15 @@ export default function Header() {
 
     return (
         <div className='flex flex-col w-full z-50 relative'>
-            <div className="flex w-full justify-between bg-black items-center px-0 sm:px-12  py-4  pt-6 before:absolute before:content-[' '] before:top-0 before:left-0 before:bottom-0 before:right-0 before:bg-[url(/gradient/13.jpg)] before:opacity-90 before:bg-cover shadow-card-upload-black z-[100]">
+            <div className="flex w-full justify-between bg-gradient-to-r from-[#5726c9] to-[#a82ae1] items-center px-0 sm:px-12  py-4  pt-6 shadow-card-upload-black z-[100]">
                 <Link
                     href="/"
                     className="flex shrink-0 overflow-visible"
                 >
                     <Logo />
                 </Link>
-                <div className=" bg-white rounded-md w-full relative text-[black] font-header ml-4 mr-4 md:ml-6 md:mr-10 lg:ml-10 lg:mr-16">
-                    <input className="outline-none border-none focus:border-none active:outline-none flex input-box bg-white text-black py-2 pl-5 pr-16 rounded-lg w-full focus:outline-none focus:bg-[transparent] text-lg md:text-2xl "
+                <div className=" w-full relative text-[black] font-header ml-4 mr-4 md:ml-6 md:mr-10 lg:ml-10 lg:mr-16">
+                    <input className="outline-none border-none focus:border-none active:outline-none flex input-box bg-gradient-to-r from-[#6130c4] to-[#9a32d8] text-white py-2 pl-5 pr-16 rounded-xl w-full focus:outline-none focus:bg-[transparent] text-lg md:text-xl shadow-card-upload-black placeholder:text-[#6b9ed8]"
                         type="search" name="search" placeholder="Search" />
                     <button type="submit" className="absolute right-0 top-0 mt-3 mr-4 text-dark-grey">
                         <FaSearchengin className='text-2xl text-[#bbb]' />
@@ -283,7 +283,11 @@ export default function Header() {
                     <MobileMenu />
                 </div>
             </div>
-            <div className=' absolute bottom-[-72px] lg:flex font-semibold w-full hidden md:px-10 lg:px-20 justify-between items-center bg-[#163853]'>
+            <div className='lg:block hidden absolute triangle left-0 top-[-30px] z-[100]'>
+            </div>
+            <div className='lg:block hidden absolute triangle-right right-0 top-[-30px] z-[100]'>
+            </div>
+            <div className=' absolute bottom-[-82px] lg:flex font-semibold w-full hidden md:px-10 lg:px-20 justify-between items-center bg-[black] py-1'>
                 <Link
                     href=""
                     className={`${classNames(
@@ -315,7 +319,7 @@ export default function Header() {
                     <div>AI News</div>
                 </Link>
                 <Link
-                    href=""
+                    href="/freeGpt"
                     className={`${classNames(
                         mobileNavItemClass,
                         themeColors["blue"].subMenu.item["normal"]

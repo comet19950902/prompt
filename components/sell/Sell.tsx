@@ -7,10 +7,13 @@ import Alert from '@material-ui/lab/Alert'
 import { AlertState } from '@/components/utils/misc';
 import Image from 'next/image'
 import PlusBtn from './PlusBtn'
+import { TagsInput } from "react-tag-input-component";
 
 export default function Sell() {
     const genres = ['Midjourney', 'GPT'];
     const gptTypes = ['GPT-3.5', 'GPT-4'];
+    const categories = ['3D', 'Animals', 'Anime', 'Art', 'Avatars', 'Buildings'];
+    const sub = ['Cartoons', 'Clothes', 'Fantasy', 'Nature', 'Patterns']
     const fourFeatures = ['Default', 'Advanced Data Analysis', 'Plugins']
     const [alertState, setAlertState] = React.useState<AlertState>({
         open: false,
@@ -23,6 +26,7 @@ export default function Sell() {
     const [isFour, setIsFour] = React.useState(false);
     const [isPlugin, setPlugin] = React.useState(false);
     const [images, setImages] = React.useState<string[]>(['']);
+    const [selected, setSelected] = React.useState(["Prompt", "Awesome"]);
     const handleImageUpload = (files: FileList) => {
         if (files.length <= 5) {
             setImageState(true);
@@ -89,18 +93,18 @@ export default function Sell() {
         }
     }, [images])
     return (
-        <div className="lg:pt-[84px] flex w-full px-16 md:px-24 lg:px-40 py-20 flex-col items-center shadow-card-upload-black relative text-white bg-[#000000f0] before:absolute before:content-[' '] before:top-0 before:left-0 before:bottom-0 before:right-0 before:bg-[url(/UnicornGradients/7.jpg)] before:opacity-30 before:bg-cover">
+        <div className="lg:pt-[144px] flex w-full px-16 md:px-24 lg:px-52 py-20 flex-col items-center shadow-card-upload-black relative text-white header-grad">
             {/* <img className='absolute top-0 left-0 h-full w-full' src='/UnicornGradients/6.jpg' /> */}
             {/* <div className='absolute top-0 left-0 h-full w-full bg-[#00000081] z-[5]'></div> */}
             <div className='font-header text-glow lg:text-6xl md:text-4xl text-center text-3xl px-2 lg:mb-8 md:mb-4 font-bold z-10 tracking-wider '>Sell Your Prompts</div>
-            <div className='z-10 mb-10 w-full'>
+            <div className='z-10 mb-10 w-full mt-16'>
                 <div className=''>
                     <div className='text-3xl font-semibold flex items-center mb-2'><FaBurn className='mr-2 text-cus-pink text-2xl' />Cover Section</div>
                     <div className='italic font-semibold px-4'>(The information provided here will be visible to the public. Please avoid including the prompts within this section )</div>
                 </div>
                 <div className='my-8 px-4'>
-                    <div className='text-xl font-semibold mb-2'>Choose your AI model</div>
-                    <div className='relative mr-2'>
+                    <div className='text-xl font-semibold mb-3'><span className='text-red-500'>* </span>Choose your AI model</div>
+                    <div className='relative mr-2 px-5'>
                         <select className="pl-2 pr-8 py-1 text-white font-semibold bg-[transparent] border border-white rounded-md shadow-sm outline-none appearance-none  mr-2 outline focus:border-white focus:ring-0 focus:outline focus:outline-white outline-white  cursor-pointer" onChange={handleGenre}>
                             {genres.map((genre, i) => (
                                 <option key={i} selected={genre.includes("Mid")} className='bg-[transparent] text-black'>{genre}</option>
@@ -218,7 +222,7 @@ export default function Sell() {
                     <div className='italic font-semibold px-4 mb-2'>(The information shared here will become visible only after users successfully purchase / review prompts.)</div>
                 </div>
                 <div className='my-8 px-4'>
-                    <div className='text-xl font-semibold mb-2'>Prompt Formula</div>
+                    <div className='text-xl font-semibold mb-2'><span className='text-red-500'>* </span>Prompt Formula</div>
                     {isPrompt ? (
                         <ol className='mb-3'>
                             <li>1. Ensure that all the Midjourney settings and parameters are added at the end of the prompt such as Version, Niji mode, Stylize in such --v 5.2 --niji 5 --s 500</li>
@@ -252,8 +256,44 @@ export default function Sell() {
                         <input className="bg-transparent border border-white py-2 pl-4 pr-8 focus:outline-none focus:rounded-md focus:ring-1 ring-white focus:border-none font-light text-white w-full " placeholder='https://chat.openai.com/share/00000000-0000-0000-0000-0000000000' />
                     </div>
                 )}
-                <div className='my-8 px-4 flex w-full justify-center items-center'>
-                    <div className='py-2 px-8 rounded-xl shadow-card-upload text-2xl hover:shadow-card-upload-black cursor-pointer hover:bg-[#aaaaaa22]'>Submit for Approval</div>
+            </div>
+            <div className='z-10 mb-10 w-full'>
+                <div className=''>
+                    <div className='text-3xl font-semibold flex items-center mb-2'><FaBurn className='mr-2 text-cus-pink text-2xl' />Label</div>
+                </div>
+                <div className='flex items-center'>
+                    <div className='my-8 px-4'>
+                        <div className='text-xl font-semibold mb-3'><span className='text-red-500'>* </span>Choose your Category</div>
+                        <div className='relative mr-2 px-5'>
+                            <select className="pl-2 pr-8 py-1 text-white font-semibold bg-[transparent] border border-white rounded-md shadow-sm outline-none appearance-none  mr-2 outline focus:border-white focus:ring-0 focus:outline focus:outline-white outline-white  cursor-pointer">
+                                {categories.map((cat, i) => (
+                                    <option key={i} selected={cat.includes("Mid")} className='bg-[transparent] text-black'>{cat}</option>
+                                ))}
+                            </select>
+                        </div>
+                    </div>
+                    <div className='my-8 px-4'>
+                        <div className='text-xl font-semibold mb-3'><span className='text-red-500'>* </span>Choose your Subcategory</div>
+                        <div className='relative mr-2 px-5'>
+                            <select className="pl-2 pr-8 py-1 text-white font-semibold bg-[transparent] border border-white rounded-md shadow-sm outline-none appearance-none  mr-2 outline focus:border-white focus:ring-0 focus:outline focus:outline-white outline-white  cursor-pointer">
+                                {sub.map((item, i) => (
+                                    <option key={i} selected={item.includes("Mid")} className='bg-[transparent] text-black'>{item}</option>
+                                ))}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div className='my-8 px-4 w-full'>
+                    <div className='text-xl font-semibold mb-2'><span className='text-red-500'>* </span>Input Tags</div>
+                    <TagsInput
+                        value={selected}
+                        onChange={setSelected}
+                        name="tags"
+                        placeHolder="tags"
+                    />
+                </div>
+                <div className='my-12 px-4 flex w-full justify-center items-center'>
+                    <div className='py-2 px-8 rounded-xl  hover:shadow-card-upload text-2xl shadow-card-upload-black cursor-pointer hover:bg-[#aaaaaa22]'>Submit for Approval</div>
                 </div>
             </div>
             <Snackbar
