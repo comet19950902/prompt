@@ -33,7 +33,7 @@ const restPrompts = [
 ]
 const Seller = () => {
     return (
-        <div className="lg:pt-[90px] px-4 md:px-16 lg:px-40 py-20 shadow-card-upload-black relative text-white before:absolute before:content-[' '] before:top-0 before:left-0 before:bottom-0 before:right-0 before:bg-[url(/gradient/5.jpg)] before:opacity-20 before:bg-cover bg-black">
+        <div className="lg:pt-[144px] px-4 md:px-16 lg:px-40 py-20 shadow-card-upload-black relative text-white before:absolute before:content-[' '] before:top-0 before:left-0 before:bottom-0 before:right-0 before:bg-[url(/gradient/5.jpg)] before:opacity-20 before:bg-cover bg-black">
             <div className='relative shadow-card-upload-black rounded-2xl'>
                 <div className="lg:aspect-[10/2] md:aspect-[4/1] aspect-[8/3] w-full before:absolute before:content-[' '] before:top-0 before:left-0 before:bottom-0 before:right-0 before:bg-[url(/gradient/1.jpg)] before:border-4 before:rounded-2xl before:border-white before:bg-cover before:bg-center px-40 text-3xl text-white bg-black before:opacity-95 rounded-2xl" >
                 </div>

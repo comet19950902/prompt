@@ -55,7 +55,7 @@ const dataTemp = [
 ]
 export default function MemArticles() {
   return (
-    <div className='lg:pt-[84px] flex flex-col font-header w-full shadow-card-upload-black py-4 lg:px-40 md:px-20 px-10'>
+    <div className='lg:pt-[144px] flex flex-col font-header w-full shadow-card-upload-black py-4 lg:px-40 md:px-20 px-10'>
         {dataTemp.map((data, index) => (
             <MemArticlesComp title={data.title} image={data.image} key={index} />
         ))}

@@ -32,7 +32,7 @@ const title = [
 ]
 const Blog = () => {
     return (
-        <div className='w-full shadow-card-upload-black bg-white h-full lg:pt-[84px]'>
+        <div className='w-full shadow-card-upload-black bg-white h-full lg:pt-[144px]'>
             <div className='font-header text-glow lg:text-6xl md:text-4xl text-2xl px-2 lg:mb-8 md:mb-4 font-bold z-10  text-[white] tracking-wider flex w-full justify-center py-4 shadow-card-upload text-center bg-gradient-to-b to-[#a072ff] from-[#ff1d46]'>
                 News
             </div>
