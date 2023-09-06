@@ -271,19 +271,20 @@ a {
 }
 
 .fox h2 {
-  color: rgb(0, 3, 46);
+  color: white;
   padding-bottom: 10px;
   border-bottom: 2px solid rgba(80, 80, 80, 0.479);
 }
 .fox a {
-  color: rgba(95, 4, 214, 0.705);
+  color: rgba(214, 18, 4);
   margin-right: 5px;
   margin-left: 5px;
   text-decoration: none;
 }
 .fox p {
-  color: rgba(0, 0, 0, 0.733);
+  color: white;
 }
 .fox strong {
   margin-left: 10px;
+  color: white;
 }
