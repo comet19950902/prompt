@@ -450,8 +450,8 @@ export default function Marketplace() {
       newRows = 1;
     }
     const newChild = (
-      <div key='newDiv' className=' md:col-span-2 lg:col-span-4 flex items-center flex-col relative'>
-        <div className='p-2 absolute top-4 right-4 rounded-full cursor-pointer hover:bg-[#2b5f795e] shrink-0 flex justify-center items-center z-[5]' onClick={()=>setChildren(children.filter(child => child.key !== 'newDiv'))}>
+      <div key='newDiv' className=' md:col-span-2 lg:col-span-4 flex items-center flex-col relative bg-white'>
+        <div className='p-2 absolute top-4 right-4 rounded-full cursor-pointer bg-[#dddddddd] hover:bg-[#2b5f795e] shrink-0 flex justify-center items-center z-[5]' onClick={()=>setChildren(children.filter(child => child.key !== 'newDiv'))}>
           <FaTimes className='' />
         </div>
         <MarketComp image={data.image} title={data.title} author={data.author} sells={data.sells} likes={data.likes} AI={data.AI} CPrompt={data.CPrompt} Sub={data.Sub} Tag={data.Tag} desc={data.desc} />

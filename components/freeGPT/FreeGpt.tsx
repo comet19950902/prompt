@@ -41,7 +41,7 @@ const FreeGpt: React.FC<Props> = ({ markdownContent }) => {
     }
   }, []);
   return (
-    <div className={`lg:pt-[144px] px-4 md:px-16 lg:px-40 py-20 shadow-card-upload-black relative flex flex-col min-w-full prose lg:prose-xl text-white bg-[#140e28] fox font-header`} id='fox'>
+    <div className={`lg:pt-[144px] px-4 md:px-16 lg:px-40 py-20 shadow-card-upload-black relative flex flex-col max-w-[calc(100vw-600px)] min-w-[calc(100vw-600px)] prose lg:prose-xl text-white bg-[#140e28] fox font-header`} id='fox'>
       <ReactMarkdown className='z-20'>{markdownContent}</ReactMarkdown>
     </div>
   );

@@ -11,7 +11,11 @@ const freeGpt: React.FC<Props> = ({ markdownContent }) => {
     return (
         <div className='bg-[white] font-body'>
             <Header />
-            <FreeGpt markdownContent={markdownContent} />
+            <div className='w-full flex items-center h-full'>
+                <div className='w-[300px] h-full bg-white'></div>
+                <FreeGpt markdownContent={markdownContent} />
+                <div className='w-[300px] h-full bg-white'></div>
+            </div>
             <Footer />
         </div>
     );
